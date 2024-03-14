@@ -1,0 +1,36 @@
+﻿@model Kitap
+<a class="btn btn-primary" asp-area="" asp-controller="Kitap" asp-action="Ekle">Kitap Ekle</a>
+<p>kitap Listesi</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Ad</th>
+            <th scope="col">Yazar</th>
+            <th scope="col">Kategori</th>
+            <th scope="col">YayınEvi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Kitap kitap in Model)
+        {
+            <tr>
+
+            <td>@kitap.Id</td>
+            <td>@kitap.Ad</td>
+            <td>@kitap.Yazar</td>
+            <td>@kitap.Kategori</td>
+            <td>@kitap.YayınEvi</td>
+
+            <td>
+                <a class="btn btn-warning" asp-area="" asp-controller="Kitap" asp-action="Guncelle">Guncelle</a>
+                <a class="btn btn-danger" asp-area="" asp-controller="Kitap" asp-action="Sil">Sil</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<p>@ViewData["Roman"]</p>
+<p>@ViewData["Klasik"]</p>
+<p>@TempData["Bilgisayar"]</p>

@@ -1,0 +1,24 @@
+﻿<form asp-action="Ekle" asp-controller="Kitap" method="post">
+    <div>
+        <label for="ad">Adı:</label>
+        <input type="text" id="ad" name="Ad" />
+    </div>
+    <div>
+        <label for="yazar">Yazarı:</label>
+        <input type="text" id="yazar" name="Yazar" />
+    </div>
+    <div>
+        <label for="kategori">Kategorisi:</label>
+        <select id="kategori" name="Kategori">
+            @foreach (var kategori in ViewBag.Kategoriler)
+            {
+                <option>@kategori</option>
+            }
+        </select>
+    </div>
+    <div>
+        <label for="yayinEvi">Yayınevi:</label>
+        <input type="text" id="yayinEvi" name="YayinEvi" />
+    </div>
+    <button type="submit">Ekle</button>
+</form>
